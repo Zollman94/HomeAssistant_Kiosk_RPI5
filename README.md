@@ -145,7 +145,7 @@ Make service file for script
 ```bash
 nano ~/.config/autostart/start_chromium.desktop
 ```
-Edit your `USERNAME` and paste this config
+Edit your `<USERNAME>` and paste this config
 ```ini
 [Desktop Entry]
 Type=Application
@@ -194,7 +194,7 @@ Set up cron:
 ```bash
 crontab -e
 ```
-Open with nano and paste this. Edit <USERNAME>!
+Open with nano and paste this. Edit `<USERNAME>` !
 ```
 * * * * * /home/<USERNAME>/send_temp_to_ha.sh
 ```
