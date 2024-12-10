@@ -166,7 +166,7 @@ Done. Now set your default page to home assistant URL and you are all set up!
 
 ---
 
-##🌡️ Monitor temperature in Home Assisntat**
+## **🌡️ Monitor temperature in Home Assisntat**
 Make bash script
 ```bash
 nano ~/send_temp_to_ha.sh
