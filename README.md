@@ -198,7 +198,14 @@ Open with nano and paste this. Edit <USERNAME>!
 ```
 * * * * * /home/<USERNAME>/send_temp_to_ha.sh
 ```
-Done.
+Done. Now in Home Assistant add this to configuration.yaml
+```yaml
+sensor:
+  - platform: mqtt
+    name: "Raspberry Pi Temperature"
+    state_topic: "homeassistant/sensor/raspberry_pi_temperature/state"
+    unit_of_measurement: "°C"
+```
 
 ---
 
