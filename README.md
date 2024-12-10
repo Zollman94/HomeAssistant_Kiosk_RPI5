@@ -137,3 +137,35 @@ If you encounter any issues, check the service logs with:
 ```bash
 journalctl -u egettouchd.service -e
 ```
+## **Autostart chormium in fullscreen mode**
+To set up launching chomium after system boot in full screen mode follow these steps:
+Check if `~/.config/autostart/` already exists
+```bash
+ls ~/.config/autostart/
+```
+If not make one
+```bash
+mkdir -p ~/.config/autostart/
+```
+Make service file for script
+```bash
+nano ~/.config/autostart/start_chromium.desktop
+```
+Edit your `USERNAME` and paste this config
+```ini
+[Desktop Entry]
+Type=Application
+Name=Start Chromium
+Exec=/home/<USERNAME>/start_chromium.sh
+X-GNOME-Autostart-enabled=true
+```
+Make Script:
+```bash
+nano ~/start_chromium.sh
+```
+Paste this:
+```bash
+#!/bin/bash
+/usr/bin/chromium --start-fullscreen
+```
+Done. Now set your default page to home assistant URL and you are all set up!
