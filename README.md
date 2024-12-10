@@ -131,7 +131,7 @@ You should see **"Active: active (running)"** in the service status.
 
 ---
 
-## **🖥️ Autostart chormium in fullscreen mode**
+## **🖥️ Autostart chromium in fullscreen mode**
 To set up launching chomium after system boot in full screen mode follow these steps:
 Check if `~/.config/autostart/` already exists
 ```bash
