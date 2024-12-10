@@ -164,6 +164,44 @@ Paste this:
 ```
 Done. Now set your default page to home assistant URL and you are all set up!
 
+---
+
+##🌡️ Monitor temperature in Home Assisntat**
+Make bash script
+```bash
+nano ~/send_temp_to_ha.sh
+```
+Edit <TOKEN>&<HA_IP> and paste this:
+```bash
+#!/bin/bash
+
+# get temp
+temp=$(vcgencmd measure_temp | awk -F'=' '{print $2}' | tr -d "'C")
+
+# Edit IP and TOKEN
+url="http://<HA_IP>:8123/api/states/sensor.raspberry_pi_temperature"
+headers="Authorization: Bearer <TOKEN>"
+json_data="{\"state\": \"$temp\", \"attributes\": {\"unit_of_measurement\": \"°C\", \"friendly_name\": \"Raspberry Pi Temperature\"}}"
+
+# send to HA
+curl -X POST -H "Content-Type: application/json" -H "$headers" -d "$json_data" $url
+```
+Make script executable:
+```bash
+chmod +x ~/send_temp_to_ha.sh
+```
+Set up cron:
+```bash
+crontab -e
+```
+Open with nano and paste this. Edit <USERNAME>!
+```
+* * * * * /home/<USERNAME>/send_temp_to_ha.sh
+```
+Done.
+
+---
+
 ## **🎉 Finished!**
 Now your Raspberry Pi 5 with iiyama PLT1700 touchscreen will automatically start the touchscreen service after each reboot with home assistant dashboard opened in chromium full screen.
 If you encounter any issues, check the service logs with:  
