@@ -171,7 +171,7 @@ Make bash script
 ```bash
 nano ~/send_temp_to_ha.sh
 ```
-Edit <TOKEN>&<HA_IP> and paste this:
+Edit `<TOKEN>` & `<HA_IP>` and paste this:
 ```bash
 #!/bin/bash
 
