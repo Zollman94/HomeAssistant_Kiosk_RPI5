@@ -131,13 +131,7 @@ You should see **"Active: active (running)"** in the service status.
 
 ---
 
-## **🎉 Finished!**
-Now your Raspberry Pi 5 with iiyama PLT1700 touchscreen will automatically start the touchscreen service after each reboot.  
-If you encounter any issues, check the service logs with:  
-```bash
-journalctl -u egettouchd.service -e
-```
-## **Autostart chormium in fullscreen mode**
+## **🖥️ Autostart chormium in fullscreen mode**
 To set up launching chomium after system boot in full screen mode follow these steps:
 Check if `~/.config/autostart/` already exists
 ```bash
@@ -169,3 +163,10 @@ Paste this:
 /usr/bin/chromium --start-fullscreen
 ```
 Done. Now set your default page to home assistant URL and you are all set up!
+
+## **🎉 Finished!**
+Now your Raspberry Pi 5 with iiyama PLT1700 touchscreen will automatically start the touchscreen service after each reboot with home assistant dashboard opened in chromium full screen.
+If you encounter any issues, check the service logs with:  
+```bash
+journalctl -u egettouchd.service -e
+```
